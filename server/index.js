@@ -12,7 +12,7 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json());
 
 app.get('/:id', function (req, res) {
-  var id = req.query.id;
+  var id = req.params.id;
   db.retrieveProduct(id, res);
 });
 
@@ -21,5 +21,5 @@ app.post('/shopping-cart/', function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`server listening at http://localhost:${port}`)
+  console.log(`server listening at http://localhost:${port}`);
 });
