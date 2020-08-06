@@ -1,13 +1,12 @@
-# Project Name
+# Allbirbs.com
 
-> Project description
+> A product page where you can buy a pair of shoes
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/teamSloanAllBirds/imageCarouselService
+  - https://github.com/teamSloanAllBirds/ProductReviewsService
+  - https://github.com/teamSloanAllBirds/ProductOptionsProxy
 
 ## Table of Contents
 
@@ -17,7 +16,7 @@
 
 ## Usage
 
-> Some usage instructions
+> You can use this to buy shoes.
 
 ## Requirements
 
