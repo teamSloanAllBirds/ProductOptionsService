@@ -8,6 +8,7 @@ node_modules/
 
 ## Webpack ##
 public/bundle.js
+config.js
 
 pids
 *.pid
