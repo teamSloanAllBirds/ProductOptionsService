@@ -9,6 +9,7 @@ node_modules/
 ## Webpack ##
 public/bundle.js
 config.js
+coverage/
 
 pids
 *.pid
