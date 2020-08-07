@@ -7,7 +7,7 @@ db.connect();
 var retrieveProduct = function (id, res) {
   db.query(`SELECT * FROM product_options WHERE _id=${id}`, function (error, results, fields) {
     if (error) {
-      console.log(error);
+      res.json(new Error());
     } else {
       res.json(results[0]);
     }
