@@ -1,9 +1,13 @@
-const express = require('express')
-const app = express();
-const $ = require('jquery');
+const express = require('express');
+const path = require('path');
 const bodyparser = require('body-parser');
-const db = require('../database/index.js')
+const $ = require('jquery');
+const db = require('../database/index.js');
+
+
+const app = express();
 const port = 3001;
+
 
 app.use(express.static(__dirname + '../public/'));
 app.use(bodyparser.urlencoded({
@@ -11,12 +15,12 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 
-app.get('/api/:id', function (req, res) {
-  var id = req.params.id;
+app.get('/api/:id', (req, res) => {
+  const id = req.params.id;
   db.retrieveProduct(id, res);
 });
 
-app.post('/shopping-cart/', function (req, res) {
+app.post('/shopping-cart/', (req, res) => {
   res.json('You have added an item to the cart');
 });
 
