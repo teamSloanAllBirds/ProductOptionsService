@@ -13,9 +13,7 @@
     "test": "jest"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/spec/test-env.js"
-    ]
+    "setupFiles": ["./spec/test-env.js"]
   },
   "dependencies": {
     "body-parser": "^1.19.0",
