@@ -5,11 +5,15 @@ const bodyparser = require('body-parser');
 const db = require('../database/index.js')
 const port = 3001;
 
-app.use(express.static(__dirname + '../public/'));
+app.use(express.static(__dirname + '/../public/'));
 app.use(bodyparser.urlencoded({
   extended: true
 }));
 app.use(bodyparser.json());
+
+app.get('/', function (req, res) {
+  res.send(__dirname + '../public');
+});
 
 app.get('/api/:id', function (req, res) {
   var id = req.params.id;

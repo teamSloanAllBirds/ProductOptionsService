@@ -14,7 +14,9 @@ class App extends React.Component {
 
   componentDidMount() {
     $.get('/api/1', (data) => {
-      this.setState(JSON.parse(data));
+      this.setState(data);
+    }).then(() => {
+      console.log(this.state);
     })
   }
 
@@ -26,10 +28,11 @@ class App extends React.Component {
         stars={this.state.productReviewStars}
         reviews={this.state.productReviewQuantity}/>
         <ProductOrder parent_state={this.state}/>
+        Free shipping & 30-day returns, no questions asked
         <ProductDetail name={this.state.productName}
-        highlight1={this.state.productHighlight1}
-        highlight2={this.state.productHighlight2}
-        hightlight3={this.state.productHighlight3}
+        highlight1={this.state.highlight1Text}
+        highlight2={this.state.highlight2Text}
+        highlight3={this.state.highlight3Text}
         core_features={this.state.coreFeatures}
         product_description={this.state.productDescription}
         shipping_returns={this.state.shippingAndReturns}

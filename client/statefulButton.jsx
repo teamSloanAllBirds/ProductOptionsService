@@ -7,7 +7,9 @@ class StatefulButton extends React.Component {
   }
   render() {
     return (
-      <div></div>
+      <div style={this.props.style}>
+        {this.props.text}
+      </div>
     )
   }
 }
