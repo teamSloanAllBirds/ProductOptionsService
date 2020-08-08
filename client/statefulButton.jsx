@@ -10,7 +10,6 @@ class StatefulButton extends React.Component {
       <div style={this.props.style}>
         {this.props.image}
         {this.props.text}
-
       </div>
     )
   }

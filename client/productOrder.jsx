@@ -26,6 +26,13 @@ class ProductOrder extends React.Component {
   handleSubmit() {
 
   }
+  componentDidMount() {
+
+
+  }
+
+
+
   render() {
     function appendSVGButton(state, shoeSize) {
       if (state) {
@@ -63,23 +70,27 @@ class ProductOrder extends React.Component {
         </svg>
         )
       }
+
     }
-    var button8 = appendSVGButton(this.state.stock8, 8);
-    var button85 = appendSVGButton(this.state.stock85, 8.5);
-    var button9 = appendSVGButton(this.state.stock9, 9);
-    var button95 = appendSVGButton(this.state.stock95, 9.5);
-    var button10 = appendSVGButton(this.state.stock10, 10);
-    var button105 = appendSVGButton(this.state.stock105, 10.5);
-    var button11 = appendSVGButton(this.state.stock11, 11);
-    var button115 = appendSVGButton(this.state.stock115, 11.5);
-    var button12 = appendSVGButton(this.state.stock12, 12);
-    var button125 = appendSVGButton(this.state.stock125, 12.5);
-    var button13 = appendSVGButton(this.state.stock13, 13);
-    var button135 = appendSVGButton(this.state.stock135, 13.5);
-    var button14 = appendSVGButton(this.state.stock14, 14);
+    var button8, button85, button9, button95, button10, button105, button11, button115, button12, button125, button13, button135, button14;
+    button8 = appendSVGButton(this.props.parent_state.thunderx8Inventory, 8);
+    button85 = appendSVGButton(this.props.parent_state.thunderx85Inventory, 8.5);
+    button9 = appendSVGButton(this.props.parent_state.thunderx9Inventory, 9);
+    button95 = appendSVGButton(this.props.parent_state.thunderx95Inventory, 9.5);
+    button10 = appendSVGButton(this.props.parent_state.thunderx10Inventory, 10);
+    button105 = appendSVGButton(this.props.parent_state.thunderx105Inventory, 10.5);
+    button11 = appendSVGButton(this.props.parent_state.thunderx11Inventory, 11);
+    button115 = appendSVGButton(this.props.parent_state.thunderx115Inventory, 11.5);
+    button12 = appendSVGButton(this.props.parent_state.thunderx12Inventory, 12);
+    button125 = appendSVGButton(this.props.parent_state.thunderx125Inventory, 12.5);
+    button13 = appendSVGButton(this.props.parent_state.thunderx13Inventory, 13);
+    button135 = appendSVGButton(this.props.parent_state.thunderx135Inventory, 13.5);
+    button14 = appendSVGButton(this.props.parent_state.thunderx14Inventory, 14);
 
     return (
+
       <div>
+
         <div>
           LIMITED EDITION: {this.state.selectedColorway}
         </div>
@@ -100,21 +111,21 @@ class ProductOrder extends React.Component {
         </div>
         <div id="outer_size_holder">
           <div id="upper_size_holder">
-            <StatefulButton text="8" style={{display: "inline-block", padding: "3px"}} image={button8}/>
-            <StatefulButton text="8.5" style={{display: "inline-block", padding: "3px"}} image={button85}/>
-            <StatefulButton text="9" style={{display: "inline-block", padding: "3px"}} image={button9}/>
-            <StatefulButton text="9.5" style={{display: "inline-block", padding: "3px"}} image={button95}/>
-            <StatefulButton text="10" style={{display: "inline-block", padding: "3px"}} image={button10}/>
-            <StatefulButton text="10.5" style={{display: "inline-block", padding: "3px"}} image={button105}/>
-            <StatefulButton text="11" style={{display: "inline-block", padding: "3px"}} image={button11}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button8}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button85}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button9}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button95}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button10}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button105}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button11}/>
           </div>
           <div id="lower_size_holder">
-            <StatefulButton text="11.5" style={{display: "inline-block", padding: "3px"}} image={button115}/>
-            <StatefulButton text="12" style={{display: "inline-block", padding: "3px"}} image={button12}/>
-            <StatefulButton text="12.5" style={{display: "inline-block", padding: "3px"}} image={button125}/>
-            <StatefulButton text="13" style={{display: "inline-block", padding: "3px"}} image={button13}/>
-            <StatefulButton text="13.5" style={{display: "inline-block", padding: "3px"}} image={button135}/>
-            <StatefulButton text="14" style={{display: "inline-block", padding: "3px"}} image={button14}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button115}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button12}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button125}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button13}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button135}/>
+            <StatefulButton style={{display: "inline-block", padding: "3px"}} image={button14}/>
           </div>
         </div>
         See Size Chart
