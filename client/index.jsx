@@ -14,7 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.get('/api/1', (data) => {
-      this.setState(data);
+      this.setState(JSON.parse(data));
     })
   }
 

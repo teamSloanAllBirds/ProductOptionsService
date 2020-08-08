@@ -21,26 +21,18 @@ class ProductDetail extends React.Component {
         <div>
           {this.props.highlight3}
         </div>
-        <div>
           <StatefulButton>
           {this.props.core_features}
           </StatefulButton>
-        </div>
-        <div>
           <StatefulButton>
             {this.props.product_description}
           </StatefulButton>
-        </div>
-        <div>
           <StatefulButton>
             {this.props.shipping_returns}
           </StatefulButton>
-        </div>
-        <div>
           <StatefulButton>
             {this.props.care_guide}
           </StatefulButton>
-        </div>
       </div>
     )
   }
