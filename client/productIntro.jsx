@@ -1,4 +1,12 @@
 import React from 'react';
+import styles from 'styled-components'
+
+const ProductName = styles.div``;
+const PriceTag = styles.div``;
+const ReviewHolder = styles.div`
+  display: inline-block;
+`;
+const NumberReviews = styles.a``;
 
 class ProductIntro extends React.Component {
   constructor(props) {
@@ -28,17 +36,15 @@ class ProductIntro extends React.Component {
     }
     return (
       <div>
-        <div>
+        <ProductName>
           {this.props.name}
-        </div>
-        <div>
+        </ProductName>
+        <PriceTag>
           $ {this.props.price}
-        </div>
-        <div id="reviews" style={{display: "inline-block"}}>
-          <div style={{display: "inline-block"}}>
-            {stars}<a href="#reviews">{this.props.reviews}</a>
-          </div>
-        </div>
+        </PriceTag>
+        <ReviewHolder id="reviews">
+            {stars}<NumberReviews href="#reviews">{this.props.reviews}</NumberReviews>
+        </ReviewHolder>
       </div>
     )
   }
