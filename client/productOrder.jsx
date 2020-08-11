@@ -5,7 +5,7 @@ class ProductOrder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedColorway: 'Thunder (Dark Blue Upper / White Sole',
+      selectedColorway: 'Thunder (Dark Blue Upper / White Sole)',
       stock8: this.props.parent_state.thunderx8Inventory,
       stock85: this.props.parent_state.thunderx85Inventory,
       stock9: this.props.parent_state.thunderx9Inventory,
@@ -22,6 +22,7 @@ class ProductOrder extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.selectShoe = this.selectShoe.bind(this);
   }
   handleSubmit() {
 
@@ -30,8 +31,14 @@ class ProductOrder extends React.Component {
 
 
   }
-
-
+  selectShoe(e) {
+    e.preventDefault();
+    this.setState({
+      // changing the styling of the selected item has been a pain
+      selectedColorway: e.target.parentNode.attributes[0].nodeValue
+      // and we want to update the colorwaysxsizes
+    });
+  }
 
   render() {
     function appendSVGButton(state, shoeSize) {
@@ -96,17 +103,44 @@ class ProductOrder extends React.Component {
         </div>
         <div id="outer_colorway_holder" style={{display: "inline-block"}}>
           <div id="upper_colorway_holder" style={{display: "inline-block"}}>
-            <StatefulButton text="Thunder (Dark Blue Upper/White Sole" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Geyser (Light Blue Sole)" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Quartz (Light Grey Sole" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Obsidian (Black Sole" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Flame (Light Red Sole)" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Bluster (Grey Sole)" style={{display: "inline-block", padding: "3px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Thunder (Dark Blue Upper / White Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/0000ff)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Geyser (Light Blue Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/03a5fc)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Quartz (Light Gray Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/a8a8a8)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Obsidian (Black Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/000000)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Flame (Light Red Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/cf3527)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Bluster (Grey Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/6b6b6b)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
           </div>
           <div id="lower_colorway_holder">
-            <StatefulButton text="Blizzard (White Sole" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Cyclone (Light Green Sole)" style={{display: "inline-block", padding: "3px"}}/>
-            <StatefulButton text="Pukeko (White Sole)" style={{display: "inline-block", padding: "3px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Blizzard (White Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/dedede)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Cyclone (Light Green Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/a8eb91)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
+            <StatefulButton onClick={this.selectShoe}
+            colorway_name="Pukeko (White Sole)"
+            background={{backgroundImage: "url(https://dummyimage.com/27x27/874956)", width: "30px", height: "30px", borderRadius: "50%"}}
+            style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
           </div>
         </div>
         <div id="outer_size_holder">
