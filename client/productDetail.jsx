@@ -27,10 +27,14 @@ class ProductDetail extends React.Component {
           </div>
         </div>
         <div id="description-block">
-          <StatefulButton text={this.props.core_features} />
-          <StatefulButton text={this.props.product_description} />
-          <StatefulButton text={this.props.shipping_returns} />
-          <StatefulButton text={this.props.care_guide} />
+          <StatefulButton text={this.props.core_features}
+          style={{display: "inline-block", padding: "3px"}}/>
+          <StatefulButton text={this.props.product_description}
+          style={{display: "inline-block", padding: "3px"}}/>
+          <StatefulButton text={this.props.shipping_returns}
+          style={{display: "inline-block", padding: "3px"}}/>
+          <StatefulButton text={this.props.care_guide}
+          style={{display: "inline-block", padding: "3px"}}/>
         </div>
       </div>
     );

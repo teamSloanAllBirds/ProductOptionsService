@@ -103,41 +103,50 @@ class ProductOrder extends React.Component {
         </div>
         <div id="outer_colorway_holder" style={{display: "inline-block"}}>
           <div id="upper_colorway_holder" style={{display: "inline-block"}}>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Thunder (Dark Blue Upper / White Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/0000ff)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Geyser (Light Blue Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/03a5fc)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Quartz (Light Gray Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/a8a8a8)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Obsidian (Black Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/000000)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Flame (Light Red Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/cf3527)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Bluster (Grey Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/6b6b6b)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
           </div>
           <div id="lower_colorway_holder">
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Blizzard (White Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/dedede)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Cyclone (Light Green Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/a8eb91)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
-            <StatefulButton onClick={this.selectShoe}
+            <StatefulButton selected_colorway={this.state.selectedColorway}
+            onClick={this.selectShoe}
             colorway_name="Pukeko (White Sole)"
             background={{backgroundImage: "url(https://dummyimage.com/27x27/874956)", width: "30px", height: "30px", borderRadius: "50%"}}
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
@@ -164,7 +173,7 @@ class ProductOrder extends React.Component {
         </div>
         See Size Chart
         <div id="take_action_button">
-          <StatefulButton />
+          <StatefulButton style={{display: "inline-block", padding: "3px"}}/>
         </div>
       </div>
     )
