@@ -43,8 +43,8 @@ class ProductOrder extends React.Component {
       }
     })
   }
-  // componentDidMount() {
-  // }
+  componentDidMount() {
+  }
   selectShoe(e) {
     e.preventDefault();
     var innerSelectedColorway = e.target.parentNode.attributes[0].nodeValue;
@@ -90,19 +90,34 @@ class ProductOrder extends React.Component {
   }
 
   render() {
-    if (this.state.selectedSize === '') {
-      var defaultCartStyle = {
-        // send a default css package using a ternary in assignment
-        // like this.state.selectedSize === '' ? defaultCartStyle : the other style
-      };
-    }
-    if (this.state.stock8 === 0) {
-      var oos8Style = {
-        // send a default css package using a ternary in assignment
-        // like this.state.stock8 === 0 ? oos8Style : the other style
-          // this is where we draw a line through the
-        };
-    }
+    var defaultCartStyle = {
+      // send a default css package using a ternary in assignment
+      // like this.state.selectedSize === '' ? defaultCartStyle : the other style
+      display: "inline-block",
+      padding: "3px",
+      height: "48px",
+      backgroundColor: "#cfcfcf",
+      color: "#ffffff",
+      border: "1px solid white",
+      textAlign: "center",
+      width: "68%"
+    };
+    //if (this.state.stock8 === 0) {
+      // it's doing it twice, once on some kind of master render, then again later
+      // could we nest the if statements and do them during render, only test once
+      // we know it's defined? State....
+    var oos8Style = {
+      // send a default css package using a ternary in assignment
+      // like this.state.stock8 === 0 ? oos8Style : the other style
+        // this is where we draw a line through the
+      backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+++8++)",
+      width: "42px",
+      height: "42px",
+      borderRadius: "3px",
+      border: "1px solid black",
+      background: "linearGradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)"
+    };
+    //}
     return (
       <div>
         <div>
@@ -180,7 +195,7 @@ class ProductOrder extends React.Component {
             onClick={this.selectSize}
             size_name="8"
             style={{display: "inline-block", margin: "3px"}}
-            background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+++8++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
+            background={this.props.parent_state.thunderx8Inventory !== 0 ? {backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+++8++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"} : oos8Style}/>
             <StatefulButtonSize
             selected_size={this.state.selectedSize}
             onClick={this.selectSize}
@@ -263,7 +278,7 @@ class ProductOrder extends React.Component {
           onClick={this.handleSubmit}
           selected_colorway={this.state.selectedColorway}
           selected_size={this.state.selectedSize}
-          style={{display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#cfcfcf", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
+          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
         </div>
       </div>
     )
