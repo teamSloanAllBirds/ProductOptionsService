@@ -67,7 +67,7 @@ class StatefulButtonColor extends React.Component {
         height: this.state.style.height,
         backgroundColor: this.state.style.backgroundColor,
         borderRadius: this.state.style.borderRadius,
-        border: "1px solid white ",
+        border: "1px solid white",
         padding: "2px"
       },
       colorway_name: this.state.colorway_name,

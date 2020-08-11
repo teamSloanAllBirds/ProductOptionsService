@@ -71,7 +71,6 @@ class StatefulButtonSize extends React.Component {
     var sizeNameSizer = this.props.size_name;
     if (sizeNameSizer.length === 1) {
       sizeNameSizer = sizeNameSizer.padEnd(3, '+');
-      sizeNameSizer = sizeNameSizer.padStart(6, '+');
     }
     if (sizeNameSizer.length === 2 || sizeNameSizer.length === 3) {
       sizeNameSizer = sizeNameSizer.padEnd(4, '+');
@@ -88,8 +87,8 @@ class StatefulButtonSize extends React.Component {
     var isSelected = (this.props.selected_size === this.props.size_name);
 
     return (
-      <div name={this.state.size_name} onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover} onMouseLeave={isSelected ? () => { return undefined; } : this.toggleHover} style={this.state.style} onClick={this.toggleClick}>
-        <div name={this.props.size_name} style={this.state.background}/>
+      <div name={this.props.size_name} onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover} onMouseLeave={isSelected ? () => { return undefined; } : this.toggleHover} style={this.state.style} onClick={this.toggleClick}>
+        <div name={this.props.size_name} style={this.state.background}></div>
       </div>
     )
   }

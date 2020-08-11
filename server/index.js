@@ -21,7 +21,7 @@ app.get('/api/:id', (req, res) => {
 });
 
 app.post('/shopping-cart/', (req, res) => {
-  res.json('You have added an item to the cart');
+  res.json('You have added an item to the cart' + JSON.stringify(req.body));
 });
 
 app.listen(port, () => {

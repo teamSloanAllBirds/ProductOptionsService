@@ -2,6 +2,8 @@ import React from 'react';
 import StatefulButtonColor from './statefulButtonColor.jsx';
 import StatefulButton from './statefulButton.jsx';
 import StatefulButtonSize from './statefulButtonSize.jsx';
+import StatefulCartButton from './statefulCartButton.jsx';
+import $ from 'jquery';
 
 class ProductOrder extends React.Component {
   constructor(props) {
@@ -29,36 +31,45 @@ class ProductOrder extends React.Component {
     this.selectSize = this.selectSize.bind(this);
   }
   handleSubmit() {
-
+    $.ajax({
+      type: 'POST',
+      url: '/shopping-cart/',
+      data: {
+        colorway: this.state.selectedColorway,
+        size: this.state.selectedSize
+      },
+      success: (data) => {
+        alert(data);
+      }
+    })
   }
-  componentDidMount() {
-
-
-  }
+  // componentDidMount() {
+  // }
   selectShoe(e) {
     e.preventDefault();
+    var innerSelectedColorway = e.target.parentNode.attributes[0].nodeValue;
+    var innerSelectedColorwayToUsableString = innerSelectedColorway.split(' ')[0].toLowerCase();
     this.setState({
-      selectedColorway: e.target.parentNode.attributes[0].nodeValue,
+      selectedColorway: innerSelectedColorway,
       selectedSize: this.state.selectedSize,
-      stock8: this.state.stock8,
-      stock85: this.state.stock85,
-      stock9: this.state.stock9,
-      stock95: this.state.stock95,
-      stock10: this.state.stock10,
-      stock105: this.state.stock105,
-      stock11: this.state.stock11,
-      stock115: this.state.stock115,
-      stock12: this.state.stock12,
-      stock125: this.state.stock125,
-      stock13: this.state.stock13,
-      stock135: this.state.stock135,
-      stock14: this.state.stock14
+      stock8: this.props.parent_state[`${innerSelectedColorwayToUsableString}x8Inventory`],
+      stock85: this.props.parent_state[`${innerSelectedColorwayToUsableString}x85Inventory`],
+      stock9: this.props.parent_state[`${innerSelectedColorwayToUsableString}x9Inventory`],
+      stock95: this.props.parent_state[`${innerSelectedColorwayToUsableString}x95Inventory`],
+      stock10: this.props.parent_state[`${innerSelectedColorwayToUsableString}x10Inventory`],
+      stock105: this.props.parent_state[`${innerSelectedColorwayToUsableString}x105Inventory`],
+      stock11: this.props.parent_state[`${innerSelectedColorwayToUsableString}x11Inventory`],
+      stock115: this.props.parent_state[`${innerSelectedColorwayToUsableString}x115Inventory`],
+      stock12: this.props.parent_state[`${innerSelectedColorwayToUsableString}x12Inventory`],
+      stock125: this.props.parent_state[`${innerSelectedColorwayToUsableString}x125Inventory`],
+      stock13: this.props.parent_state[`${innerSelectedColorwayToUsableString}x13Inventory`],
+      stock135: this.props.parent_state[`${innerSelectedColorwayToUsableString}x135Inventory`],
+      stock14: this.props.parent_state[`${innerSelectedColorwayToUsableString}x14Inventory`]
       // and we want to update the colorwaysxsizes
-    });
+    }, () => { console.log(this.state) });
   }
   selectSize(e) {
     e.preventDefault();
-    console.log(e.target.attributes[0].nodeValue);
     this.setState({
       selectedColorway: this.state.selectedColorway,
       selectedSize: e.target.attributes[0].nodeValue,
@@ -80,9 +91,7 @@ class ProductOrder extends React.Component {
 
   render() {
     return (
-
       <div>
-
         <div>
           LIMITED EDITION: {this.state.selectedColorway}
         </div>
@@ -147,6 +156,11 @@ class ProductOrder extends React.Component {
           </div>
         </div>
         <div id="outer_size_holder">
+          <div>
+            <div style={{width: "50%", align: "left", display: "inline-block"}}>SELECT SIZE:</div>
+            <div style={{width: "50%", align: "right", display: "inline-block"}}><a href="#sold-out">Size sold out?</a></div>
+          </div>
+
           <div id="upper_size_holder">
             <StatefulButtonSize
             selected_size={this.state.selectedSize}
@@ -230,9 +244,9 @@ class ProductOrder extends React.Component {
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++14++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
           </div>
         </div>
-        See Size Chart
-        <div id="take_action_button">
-          <StatefulButton style={{display: "inline-block", padding: "3px"}}/>
+        <a href="#size-chart">See Size Chart</a>
+        <div>
+          <StatefulCartButton onClick={this.handleSubmit} selected_colorway={this.state.selectedColorway} selected_size={this.state.selectedSize} style={{display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#cfcfcf", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
         </div>
       </div>
     )
