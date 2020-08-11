@@ -65,7 +65,7 @@ class ProductOrder extends React.Component {
       stock13: this.props.parent_state[`${innerSelectedColorwayToUsableString}x13Inventory`],
       stock135: this.props.parent_state[`${innerSelectedColorwayToUsableString}x135Inventory`],
       stock14: this.props.parent_state[`${innerSelectedColorwayToUsableString}x14Inventory`]
-      // and we want to update the colorwaysxsizes
+      // and we want to update the colorwaysxsizes now we just want to render them properly
     }, () => { console.log(this.state) });
   }
   selectSize(e) {
@@ -90,6 +90,19 @@ class ProductOrder extends React.Component {
   }
 
   render() {
+    if (this.state.selectedSize === '') {
+      var defaultCartStyle = {
+        // send a default css package using a ternary in assignment
+        // like this.state.selectedSize === '' ? defaultCartStyle : the other style
+      };
+    }
+    if (this.state.stock8 === 0) {
+      var oos8Style = {
+        // send a default css package using a ternary in assignment
+        // like this.state.stock8 === 0 ? oos8Style : the other style
+          // this is where we draw a line through the
+        };
+    }
     return (
       <div>
         <div>
@@ -246,7 +259,11 @@ class ProductOrder extends React.Component {
         </div>
         <a href="#size-chart">See Size Chart</a>
         <div>
-          <StatefulCartButton onClick={this.handleSubmit} selected_colorway={this.state.selectedColorway} selected_size={this.state.selectedSize} style={{display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#cfcfcf", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
+          <StatefulCartButton
+          onClick={this.handleSubmit}
+          selected_colorway={this.state.selectedColorway}
+          selected_size={this.state.selectedSize}
+          style={{display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#cfcfcf", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
         </div>
       </div>
     )

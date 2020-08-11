@@ -87,8 +87,15 @@ class StatefulButtonSize extends React.Component {
     var isSelected = (this.props.selected_size === this.props.size_name);
 
     return (
-      <div name={this.props.size_name} onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover} onMouseLeave={isSelected ? () => { return undefined; } : this.toggleHover} style={this.state.style} onClick={this.toggleClick}>
-        <div name={this.props.size_name} style={this.state.background}></div>
+      <div
+      name={this.props.size_name}
+      onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover}
+      onMouseLeave={isSelected ? () => { return undefined; } : this.toggleHover}
+      style={this.state.style} onClick={this.toggleClick}>
+        <div
+        name={this.props.size_name}
+        style={this.state.background}>
+        </div>
       </div>
     )
   }

@@ -62,8 +62,13 @@ class StatefulCartButton extends React.Component {
       buttonText = 'ADD TO CART';
     }
     return (
-      <div onMouseEnter={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover} onMouseLeave={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover} style={this.state.style} onClick={this.props.selected_size === '' ? () => { return undefined; } : this.toggleClick}>
-        <div style={{padding: "17px 0"}}>&nbsp;&nbsp;&nbsp;{buttonText}&nbsp;&nbsp;&nbsp;</div>
+      <div
+      onMouseEnter={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover}
+      onMouseLeave={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover}
+      style={this.state.style}
+      onClick={this.props.selected_size === '' ? () => { return undefined; } : this.toggleClick}>
+        <div style={{padding: "17px 0"}}>
+          &nbsp;&nbsp;&nbsp;{buttonText}&nbsp;&nbsp;&nbsp;</div>
       </div>
     )
   }
