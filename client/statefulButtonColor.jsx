@@ -80,7 +80,9 @@ class StatefulButtonColor extends React.Component {
     var isSelected = (this.props.selected_colorway === this.props.colorway_name);
 
     return (
-      <div onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover} onMouseLeave={isSelected? () => { return undefined; } : this.toggleHover} style={isSelected ? this.state.selectedStyle : this.state.style} onClick={this.toggleClick} colorway_name={this.props.colorway_name}>
+      <div
+       className="color_button"
+       onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover} onMouseLeave={isSelected? () => { return undefined; } : this.toggleHover} style={isSelected ? this.state.selectedStyle : this.state.style} onClick={this.toggleClick} colorway_name={this.props.colorway_name}>
         <div style={this.props.background}/>
       </div>
     )

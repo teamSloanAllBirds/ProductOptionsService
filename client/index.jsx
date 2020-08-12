@@ -22,7 +22,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <ProductIntro name={this.state.productName}
         price={this.state.productPrice}
         stars={this.state.productReviewStars}
@@ -41,5 +41,8 @@ class App extends React.Component {
     )
   }
 }
+// bonking out the render for testing
+// adding in export default for testing
+export default App;
+//ReactDOM.render(<App />, document.getElementById("app"));
 
-ReactDOM.render(<App />, document.getElementById("app"));

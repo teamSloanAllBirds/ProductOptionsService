@@ -2,7 +2,6 @@ const server = require('../server/index.js');
 const db = require('../database/index.js');
 const $ = require('jquery');
 
-//jest.unmock('jquery');
 
 describe('test server requests', () => {
 

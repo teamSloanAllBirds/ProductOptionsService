@@ -119,7 +119,7 @@ class ProductOrder extends React.Component {
     };
     //}
     return (
-      <div>
+      <div className="product_order">
         <div>
           LIMITED EDITION: {this.state.selectedColorway}
         </div>
