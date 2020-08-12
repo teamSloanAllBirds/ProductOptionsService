@@ -1,12 +1,23 @@
 import React from 'react';
 import styles from 'styled-components'
 
-const ProductName = styles.div``;
-const PriceTag = styles.div``;
+const ProductName = styles.h1`
+font-weight: 900;
+height: 30px;
+`;
+const PriceTag = styles.div`
+padding-bottom: 10px;
+`;
 const ReviewHolder = styles.div`
   display: inline-block;
+  padding-bottom: 13px;
 `;
-const NumberReviews = styles.a``;
+const NumberReviews = styles.a`
+  font-size: 95%;
+  padding-left: 3px;
+  padding-top: 2px;
+  vertical-align: top;
+`;
 
 class ProductIntro extends React.Component {
   constructor(props) {
@@ -22,7 +33,7 @@ class ProductIntro extends React.Component {
         strokeWidth: "1px",
         strokeLinejoin: "round",
         padding: "3px"
-        }} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="13" height="13">
+        }} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="13" height="13" paddingtop="2px">
       <polygon fill="#212a2f" points="23,8.8 15,7.6 11.5,0 8,7.6 0,8.8 5.7,14.7 4.4,23 11.5,19 18.6,23 17.2,14.7"></polygon></svg>);
     }
     while (stars.length < 5) {
@@ -31,7 +42,7 @@ class ProductIntro extends React.Component {
         strokeWidth: "1px",
         strokeLinejoin: "round",
         padding: "3px"
-        }} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="13" height="13">
+        }} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="13" height="13" paddingtop="2px">
       <polygon fill="#ffffff" points="23,8.8 15,7.6 11.5,0 8,7.6 0,8.8 5.7,14.7 4.4,23 11.5,19 18.6,23 17.2,14.7"></polygon></svg>);
     }
     return (
