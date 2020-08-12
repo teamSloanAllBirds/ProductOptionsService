@@ -1,3 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App functionality should render and mount properly 1`] = `ReactWrapper {}`;
+
 exports[`App functionality should render without throwing an error 1`] = `ShallowWrapper {}`;
+
+exports[`ProductIntro functionality should render without throwing an error 1`] = `ShallowWrapper {}`;
+
+exports[`ProductOrder functionality should call the click function 1`] = `ReactWrapper {}`;
+
+exports[`ProductOrder functionality should call the click function 2`] = `ReactWrapper {}`;
+
+exports[`ProductOrder functionality should call the click function 3`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonCart functionality should call the click function 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonCart functionality should call the hover function 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonCart functionality should call the hover function 2`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonCart functionality should call the hover function when no selected size 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonCart functionality should call the hover function when no selected size 2`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function 2`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function 3`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function 4`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function 5`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function when not selected 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonColor functionality should call the hover function when not selected 2`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonSize functionality should call the hover function 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonSize functionality should call the hover function 2`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonSize functionality should call the hover function when not selected 1`] = `ReactWrapper {}`;
+
+exports[`StatefulButtonSize functionality should call the hover function when not selected 2`] = `ReactWrapper {}`;

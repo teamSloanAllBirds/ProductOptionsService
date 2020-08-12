@@ -126,6 +126,7 @@ class ProductOrder extends React.Component {
         <div id="outer_colorway_holder" style={{display: "inline-block"}}>
           <div id="upper_colorway_holder" style={{display: "inline-block"}}>
             <StatefulButtonColor
+            id="button_1"
             selected_colorway={this.state.selectedColorway}
             onClick={this.selectShoe}
             colorway_name="Thunder (Dark Blue Upper / White Sole)"
@@ -191,6 +192,7 @@ class ProductOrder extends React.Component {
 
           <div id="upper_size_holder">
             <StatefulButtonSize
+            id="button_2"
             selected_size={this.state.selectedSize}
             onClick={this.selectSize}
             size_name="8"
@@ -275,6 +277,7 @@ class ProductOrder extends React.Component {
         <a href="#size-chart">See Size Chart</a>
         <div>
           <StatefulCartButton
+          id="cart_button_1"
           onClick={this.handleSubmit}
           selected_colorway={this.state.selectedColorway}
           selected_size={this.state.selectedSize}
