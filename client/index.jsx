@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    $.get('/api/1', (data) => {
+    $.get('/api/5', (data) => {
       this.setState(data);
     }).then(() => {
       console.log(this.state);
