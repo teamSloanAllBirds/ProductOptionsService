@@ -282,11 +282,12 @@ class ProductOrder extends React.Component {
           onClick={this.handleSubmit}
           selected_colorway={this.state.selectedColorway}
           selected_size={this.state.selectedSize}
-          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "90%"}}/>
+          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "95%"}}/>
         </div>
       </div>
     )
   }
 }
 
+// the defaults I'm passing in are the problem/opportunity
 export default ProductOrder;

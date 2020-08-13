@@ -28,7 +28,7 @@ class App extends React.Component {
         stars={this.state.productReviewStars}
         reviews={this.state.productReviewQuantity}/>
         <ProductOrder parent_state={this.state}/>
-        <span style={{display: "inline-block", fontSize: "small", marginTop: "10px", marginBottom: "10px", marginLeft: "9px"}}>Free shipping & 30-day returns, no questions asked</span>
+        <span style={{display: "inline-block", fontSize: "small", marginTop: "10px", marginBottom: "10px", textAlign: "center", width: "95%"}}>Free shipping & 30-day returns, no questions asked</span>
         <ProductDetail name={this.state.productName}
         highlight1={this.state.highlight1Text}
         highlight2={this.state.highlight2Text}
