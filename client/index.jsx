@@ -16,7 +16,7 @@ class App extends React.Component {
     $.get('/api/5', (data) => {
       this.setState(data);
     }).then(() => {
-      console.log(this.state);
+      return;
     })
   }
 

@@ -5,7 +5,17 @@ class StatefulCartButton extends React.Component {
     super(props);
     this.state = {
       hover: false,
-      style: this.props.style,
+      style: this.props.selected_size === '' ? this.props.style : {
+        display: this.props.style.display,
+        height: this.props.style.height,
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        padding: this.props.style.padding,
+        border: "2px solid black",
+        margin: this.state.style.margin,
+        textAlign: this.state.style.textAlign,
+        width: this.state.style.width
+      },
       selected_colorway: this.props.selected_colorway,
       selected_size: this.props.selected_size
     }
@@ -14,6 +24,7 @@ class StatefulCartButton extends React.Component {
   }
 
   toggleHover() {
+    console.log('inToggleHover');
     if (!this.state.hover) {
       this.setState({
         hover: !this.state.hover,
@@ -23,7 +34,7 @@ class StatefulCartButton extends React.Component {
           backgroundColor: "#ffffff",
           color: "#000000",
           padding: this.state.style.padding,
-          border: this.state.style.border,
+          border: "1px solid black",
           margin: this.state.style.margin,
           textAlign: this.state.style.textAlign,
           width: this.state.style.width
@@ -40,7 +51,7 @@ class StatefulCartButton extends React.Component {
           backgroundColor: "#000000",
           color: "#ffffff",
           padding: this.state.style.padding,
-          border: this.state.style.border,
+          border: "1px solid black",
           margin: this.state.style.margin,
           textAlign: this.state.style.textAlign,
           width: this.state.style.width
@@ -52,7 +63,23 @@ class StatefulCartButton extends React.Component {
   }
   toggleClick(e) {
     e.preventDefault();
-    this.props.onClick(e);
+    this.setState({
+      hover: this.state.hover,
+      style: {
+        display: this.state.style.display,
+        height: this.state.style.height,
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        padding: this.state.style.padding,
+        border: this.state.style.border,
+        margin: this.state.style.margin,
+        textAlign: this.state.style.textAlign,
+        width: this.state.style.width
+      },
+      selected_colorway: this.state.selected_colorway,
+      selected_size: this.state.selected_size
+    });
+    this.props.onClick(e)
   }
   render() {
     var buttonText;
@@ -66,7 +93,7 @@ class StatefulCartButton extends React.Component {
       className="cart_button"
       onMouseEnter={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover}
       onMouseLeave={this.props.selected_size === '' ? () => { return undefined; } : this.toggleHover}
-      style={this.state.style}
+      style={this.props.selected_size === '' ? this.props.style : this.state.style}
       onClick={this.props.selected_size === '' ? () => { return undefined; } : this.toggleClick}>
         <div style={{padding: "17px 0", width: "90%"}}>
           &nbsp;&nbsp;&nbsp;{buttonText}&nbsp;&nbsp;&nbsp;</div>
