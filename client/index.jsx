@@ -28,7 +28,7 @@ class App extends React.Component {
         stars={this.state.productReviewStars}
         reviews={this.state.productReviewQuantity}/>
         <ProductOrder parent_state={this.state}/>
-        Free shipping & 30-day returns, no questions asked
+        <span style={{display: "inline-block", fontSize: "small", marginTop: "10px", marginBottom: "10px", marginLeft: "9px"}}>Free shipping & 30-day returns, no questions asked</span>
         <ProductDetail name={this.state.productName}
         highlight1={this.state.highlight1Text}
         highlight2={this.state.highlight2Text}
@@ -43,6 +43,6 @@ class App extends React.Component {
 }
 // bonking out the render for testing
 // adding in export default for testing
-export default App;
-//ReactDOM.render(<App />, document.getElementById("app"));
+//export default App;
+ReactDOM.render(<App />, document.getElementById("app"));
 

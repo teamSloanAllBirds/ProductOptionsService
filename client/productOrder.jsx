@@ -70,9 +70,10 @@ class ProductOrder extends React.Component {
   }
   selectSize(e) {
     e.preventDefault();
+    var innerSelectedSize = e.target.attributes[0].nodeValue;
     this.setState({
       selectedColorway: this.state.selectedColorway,
-      selectedSize: e.target.attributes[0].nodeValue,
+      selectedSize: innerSelectedSize,
       stock8: this.state.stock8,
       stock85: this.state.stock85,
       stock9: this.state.stock9,
@@ -100,7 +101,7 @@ class ProductOrder extends React.Component {
       color: "#ffffff",
       border: "1px solid white",
       textAlign: "center",
-      width: "68%"
+      width: "95%"
     };
     //if (this.state.stock8 === 0) {
       // it's doing it twice, once on some kind of master render, then again later
@@ -120,8 +121,8 @@ class ProductOrder extends React.Component {
     //}
     return (
       <div className="product_order">
-        <div>
-          LIMITED EDITION: {this.state.selectedColorway}
+        <div style={{fontSize: "small", paddingBottom: "10px"}}>
+          <span style={{fontWeight: "bolder"}}>LIMITED EDITION: </span>{this.state.selectedColorway}
         </div>
         <div id="outer_colorway_holder" style={{display: "inline-block"}}>
           <div id="upper_colorway_holder" style={{display: "inline-block"}}>
@@ -184,13 +185,13 @@ class ProductOrder extends React.Component {
             style={{display: "inline-block", margin: "3px", width: "30px", height: "30px", borderRadius: "50%", border: "1px solid white", padding: "2px"}}/>
           </div>
         </div>
-        <div id="outer_size_holder">
+        <div id="outer_size_holder" style={{marginTop: "13px", paddingBottom: "8px"}}>
           <div>
-            <div style={{width: "50%", align: "left", display: "inline-block"}}>SELECT SIZE:</div>
-            <div style={{width: "50%", align: "right", display: "inline-block"}}><a href="#sold-out">Size sold out?</a></div>
+            <div style={{width: "50%", align: "left", display: "inline-block", fontSize: "small"}}>SELECT SIZE:</div>
+            <div style={{width: "50%", align: "right", display: "inline-block", fontSize: "small"}}><a href="#sold-out" >Size sold out?</a></div>
           </div>
 
-          <div id="upper_size_holder">
+          <div id="upper_size_holder" style={{marginTop: "5px"}}>
             <StatefulButtonSize
             id="button_2"
             selected_size={this.state.selectedSize}
@@ -274,14 +275,14 @@ class ProductOrder extends React.Component {
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++14++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
           </div>
         </div>
-        <a href="#size-chart">See Size Chart</a>
-        <div>
+        <a href="#size-chart" style={{fontSize: "small"}}>See Size Chart</a>
+        <div style={{marginTop: "10px"}}>
           <StatefulCartButton
           id="cart_button_1"
           onClick={this.handleSubmit}
           selected_colorway={this.state.selectedColorway}
           selected_size={this.state.selectedSize}
-          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "1px solid white", textAlign: "center", width: "68%"}}/>
+          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "90%"}}/>
         </div>
       </div>
     )
