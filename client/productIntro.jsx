@@ -35,7 +35,7 @@ class ProductIntro extends React.Component {
       <polygon fill="#ffffff" points="23,8.8 15,7.6 11.5,0 8,7.6 0,8.8 5.7,14.7 4.4,23 11.5,19 18.6,23 17.2,14.7"></polygon></svg>);
     }
     return (
-      <div>
+      <div id="product_intro">
         <ProductName>
           {this.props.name}
         </ProductName>

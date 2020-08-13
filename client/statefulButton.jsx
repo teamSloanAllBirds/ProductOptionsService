@@ -55,7 +55,9 @@ class StatefulButton extends React.Component {
   render() {
 
     return (
-      <div style={this.state.style}>
+      <div
+      className="stateful_button"
+      style={this.state.style}>
         <div style={{padding: "17px 0"}}>{this.props.text}</div>
       </div>
     )
