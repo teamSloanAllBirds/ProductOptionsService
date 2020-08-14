@@ -15,50 +15,42 @@ class StatefulButtonSize extends React.Component {
   }
   toggleHover() {
     if (!this.state.hover) {
-      this.setState({
-        hover: !this.state.hover,
-        style: this.state.style,
-        background: {
-          backgroundImage: `url(https://dummyimage.com/42x42/dbdbdb&text=${this.state.background.backgroundImage.substr(-7, 6)})`,
-          width: this.state.background.width,
-          height: this.state.background.height,
-          borderRadius: this.state.background.borderRadius,
-          border: this.state.background.border
-        },
-        selectedSize: this.state.selectedSize,
-        sizeName: this.state.sizeName
+      this.setState((prevState, props) => {
+        return {
+          ...prevState,
+          hover: !prevState.hover,
+          background: {
+            ...prevState.background,
+            backgroundImage: `url(https://dummyimage.com/42x42/dbdbdb&text=${this.state.background.backgroundImage.substr(-7, 6)})`
+          }
+        }
       });
     } else {
-      this.setState({
-        hover: !this.state.hover,
-        style: this.state.style,
-        background: {
-          backgroundImage: `url(https://dummyimage.com/42x42/ffffff&text=${this.state.background.backgroundImage.substr(-7, 6)})`,
-          width: this.state.background.width,
-          height: this.state.background.height,
-          borderRadius: this.state.background.borderRadius,
-          border: this.state.background.border
-        },
-        selectedSize: this.state.selectedSize,
-        sizeName: this.state.sizeName
+      this.setState((prevState, props) => {
+        return {
+          ...prevState,
+          hover: !prevState.hover,
+          background: {
+            ...prevState.background,
+            backgroundImage: `url(https://dummyimage.com/42x42/ffffff&text=${this.state.background.backgroundImage.substr(-7, 6)})`
+          }
+        }
       });
     }
   }
+
   toggleClick(e) {
     e.preventDefault();
-    this.setState({
-      hover: false,
-      style: this.state.style,
-      background: {
-        backgroundImage: `url(https://dummyimage.com/42x42/000000/ffffff&text=${this.sizeNamePlus()})`,
-        width: this.state.background.width,
-        height: this.state.background.height,
-        borderRadius: this.state.background.borderRadius,
-        border: this.state.background.border
-      },
-      selectedSize: this.state.selectedSize,
-      sizeName: this.state.sizeName
-    })
+    this.setState((prevState, props) =>{
+      return {
+        ...prevState,
+        hover: false,
+        background: {
+          ...prevState.background,
+          backgroundImage: `url(https://dummyimage.com/42x42/000000/ffffff&text=${this.sizeNamePlus()})`
+        }
+      }
+    });
     this.props.onClick(e);
   }
 
@@ -79,14 +71,14 @@ class StatefulButtonSize extends React.Component {
   }
 
   render() {
-    var isSelected = (this.props.selected_size === this.props.size_name);
+    var isSelected = (this.props.selectedSize === this.props.size_name);
 
     return (
       <div
       name={this.props.size_name}
       onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover}
       onMouseLeave={isSelected ? () => { return undefined; } : this.toggleHover}
-      style={this.state.style} onClick={this.toggleClick}>
+      style={this.props.style} onClick={this.toggleClick}>
         <div
         name={this.props.size_name}
         style={this.state.background}>
