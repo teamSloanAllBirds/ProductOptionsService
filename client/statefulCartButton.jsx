@@ -4,91 +4,56 @@ import PropTypes from 'prop-types';
 class StatefulCartButton extends Component {
   constructor(props) {
     super(props);
+    const { style, selectedSize, selectedColorway } = this.props;
     this.state = {
       hover: false,
-<<<<<<< HEAD
-      style: this.props.style, // {style} = props
-      selectedColorway: this.props.selectedColorway,
-      selectedSize: this.props.selectedSize,
+      style, // {style} = props
+      selectedColorway,
+      selectedSize,
     };
-=======
-      style: this.props.selected_size === '' ? this.props.style : {
-        display: this.props.style.display,
-        height: this.props.style.height,
-        backgroundColor: "#000000",
-        color: "#ffffff",
-        padding: this.props.style.padding,
-        border: "2px solid black",
-        margin: this.state.style.margin,
-        textAlign: this.state.style.textAlign,
-        width: this.state.style.width
-      },
-      selected_colorway: this.props.selected_colorway,
-      selected_size: this.props.selected_size
-    }
->>>>>>> abc3233eda80d0c5fcb546db7ffbef7d9be5d532
     this.toggleHover = this.toggleHover.bind(this);
     this.toggleClick = this.toggleClick.bind(this);
   }
 
   toggleHover() {
-    console.log('inToggleHover');
-    if (!this.state.hover) {
-      this.setState({
-        hover: !this.state.hover,
+    const { hover } = this.state;
+    if (!hover) {
+      this.setState((prevState) => ({
+        ...prevState,
+        hover: !prevState.hover,
         style: {
-          display: this.state.style.display,
-          height: this.state.style.height,
+          ...prevState.style,
           backgroundColor: '#ffffff',
           color: '#000000',
-          padding: this.state.style.padding,
-          border: "1px solid black",
-          margin: this.state.style.margin,
-          textAlign: this.state.style.textAlign,
-          width: this.state.style.width,
+          border: '1px solid black',
         },
-        selectedColorway: this.state.selectedColorway,
-        selectedSize: this.state.selectedSize,
-      });
+      }));
     } else {
-      this.setState({
-        hover: !this.state.hover,
+      this.setState((prevState) => ({
+        ...prevState,
+        hover: !prevState.hover,
         style: {
-          display: this.state.style.display,
-          height: this.state.style.height,
+          ...prevState.style,
           backgroundColor: '#000000',
           color: '#ffffff',
-          padding: this.state.style.padding,
-          border: "1px solid black",
-          margin: this.state.style.margin,
-          textAlign: this.state.style.textAlign,
-          width: this.state.style.width,
+          border: '1px solid black',
         },
-        selectedColorway: this.state.selectedColorway,
-        selectedSize: this.state.selectedSize,
-      });
+      }));
     }
   }
 
   toggleClick(e) {
+    const { onClick } = this.props;
     e.preventDefault();
-    this.setState({
-      hover: this.state.hover,
+    this.setState((prevState) => ({
+      ...prevState,
       style: {
-        display: this.state.style.display,
-        height: this.state.style.height,
-        backgroundColor: "#000000",
-        color: "#ffffff",
-        padding: this.state.style.padding,
-        border: this.state.style.border,
-        margin: this.state.style.margin,
-        textAlign: this.state.style.textAlign,
-        width: this.state.style.width
+        ...prevState.style,
+        backgroundColor: '#000000',
+        color: '#ffffff',
       },
-      selected_colorway: this.state.selected_colorway,
-      selected_size: this.state.selected_size
-    });
-    this.props.onClick(e)
+    }));
+    onClick(e);
   }
 
   render() {
@@ -107,7 +72,11 @@ class StatefulCartButton extends Component {
         onMouseEnter={selectedSize === '' ? () => undefined : this.toggleHover}
         onMouseLeave={selectedSize === '' ? () => undefined : this.toggleHover}
         style={style}
-        onClick={selectedSize === '' ? () => undefined : this.toggleClick}>
+        onClick={selectedSize === '' ? () => undefined : this.toggleClick}
+        onKeyDown={selectedSize === '' ? () => undefined : this.toggleHover}
+        role="button"
+        tabIndex="0"
+      >
         <div style={{ padding: '17px 0', width: '90%' }}>
           &nbsp;&nbsp;&nbsp;
           {buttonText}
@@ -119,7 +88,7 @@ class StatefulCartButton extends Component {
 }
 
 StatefulCartButton.propTypes = {
-  style: PropTypes.objectOf(PropTypes.object).isRequired,
+  style: PropTypes.objectOf(PropTypes.string).isRequired,
   selectedColorway: PropTypes.string.isRequired,
   selectedSize: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
