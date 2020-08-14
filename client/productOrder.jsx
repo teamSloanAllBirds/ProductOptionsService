@@ -280,8 +280,8 @@ class ProductOrder extends React.Component {
           <StatefulCartButton
           id="cart_button_1"
           onClick={this.handleSubmit}
-          selected_colorway={this.state.selectedColorway}
-          selected_size={this.state.selectedSize}
+          selectedColorway={this.state.selectedColorway}
+          selectedSize={this.state.selectedSize}
           style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "90%"}}/>
         </div>
       </div>
