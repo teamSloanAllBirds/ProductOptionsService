@@ -44,28 +44,28 @@ class ProductDetail extends React.Component {
           <StatefulButton
           descriptionName="CORE FEATURES"
           onClick={this.onClick}
-          text={this.props.core_features}
+          text={this.props.coreFeatures}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
           selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
           descriptionName="DESCRIPTION"
           onClick={this.onClick}
-          text={this.props.product_description}
+          text={this.props.productDescription}
           style={{display: "inline", padding: "3px", fontSize: "small",}}
           selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
           descriptionName="SHIPPING & RETURNS"
           onClick={this.onClick}
-          text={this.props.shipping_returns}
+          text={this.props.shippingReturns}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
           selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
           descriptionName="CARE GUIDE"
           onClick={this.onClick}
-          text={this.props.care_guide}
+          text={this.props.careGuide}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
           selectedDescription={this.state.selectedDescription}/>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
