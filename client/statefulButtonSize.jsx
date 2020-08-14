@@ -38,7 +38,7 @@ class StatefulButtonSize extends React.Component {
     const { onClick } = this.props;
     e.preventDefault();
     this.setState(() => ({
-      hover: true,
+      hover: false,
       stateBackgroundImage: `url(https://dummyimage.com/42x42/000000/ffffff&text=${this.sizeNamePlus()})`,
     }));
     onClick(e);
@@ -75,7 +75,7 @@ class StatefulButtonSize extends React.Component {
     }
     const isSelected = (selectedSize === sizeName);
     if (!isSelected && backgroundImage === `url(https://dummyimage.com/42x42/000000/ffffff&text=${this.sizeNamePlus()})`) {
-      backgroundImage = `url(https://dummyimage.com/42x42/dbdbdb&text=${background.backgroundImage.substr(-7, 6)})`;
+      backgroundImage = `url(https://dummyimage.com/42x42/ffffff&text=${background.backgroundImage.substr(-7, 6)})`;
     }
     return (
       <div
@@ -86,7 +86,7 @@ class StatefulButtonSize extends React.Component {
         onClick={this.toggleClick}
         onKeyDown={isSelected ? () => undefined : this.toggleClick}
         role="button"
-        tabIndex="-1"
+        tabIndex="0"
       >
         <div
           name={sizeName}

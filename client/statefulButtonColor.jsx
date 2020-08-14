@@ -1,92 +1,105 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class StatefulButtonColor extends React.Component {
   constructor(props) {
     super(props);
+    const { style } = this.props;
+    const {
+      display, margin, width, height, borderRadius,
+    } = style;
     this.state = {
       hover: false,
-      style: this.props.style,
-      colorway_name: this.props.colorway_name,
+      style,
       selectedStyle: {
-        display: this.props.style.display,
-        margin: this.props.style.margin,
-        width: this.props.style.width,
-        height: this.props.style.height,
-        borderRadius: this.props.style.borderRadius,
-        border: "2px solid #cfcfcf",
-        padding: "1px",
-      }
-    }
+        display,
+        margin,
+        width,
+        height,
+        borderRadius,
+        border: '2px solid #cfcfcf',
+        padding: '1px',
+      },
+      stateBorder: '1px solid white',
+      statePadding: '2px',
+    };
     this.toggleHover = this.toggleHover.bind(this);
     this.toggleClick = this.toggleClick.bind(this);
   }
+
   toggleHover() {
-    if (!this.state.hover) {
-      this.setState({
-        hover: !this.state.hover,
-        style: {
-          display: this.state.style.display,
-          margin: this.state.style.margin,
-          width: this.state.style.width,
-          height: this.state.style.height,
-          borderRadius: this.state.style.borderRadius,
-          border: "1px solid #dedede",
-          padding: "2px",
-        },
-        colorway_name: this.state.colorway_name,
-        selectedStyle: this.state.selectedStyle
-      });
+    const { hover } = this.state;
+    if (!hover) {
+      this.setState((prevState) => ({
+        hover: !prevState.hover,
+        stateBorder: '1px solid #dedede',
+        statePadding: '2px',
+      }));
     } else {
-      this.setState({
-        hover: !this.state.hover,
-        style: {
-          display: this.state.style.display,
-          margin: this.state.style.margin,
-          width: this.state.style.width,
-          height: this.state.style.height,
-          borderRadius: this.state.style.borderRadius,
-          border: "1px solid white",
-          padding: "2px"
-        },
-        colorway_name: this.state.colorway_name,
-        selectedStyle: this.state.selectedStyle
-      });
+      this.setState((prevState) => ({
+        hover: !prevState.hover,
+        stateBorder: '1px solid white',
+        statePadding: '2px',
+      }));
     }
   }
+
   toggleClick(e) {
+    const { onClick } = this.props;
     e.preventDefault();
-    this.setState({
+    this.setState(() => ({
       hover: false,
-      style: {
-        display: this.state.style.display,
-        margin: this.state.style.margin,
-        width: this.state.style.width,
-        height: this.state.style.height,
-        borderRadius: this.state.style.borderRadius,
-        border: "1px solid white",
-        padding: "2px"
-      },
-      colorway_name: this.state.colorway_name,
-      selectedStyle: this.state.selectedStyle
-    })
-    this.props.onClick(e);
+      stateBorder: '1px solid white',
+      statePadding: '2px',
+    }));
+    onClick(e);
   }
 
   render() {
-    var isSelected = (this.props.selected_colorway === this.props.colorway_name);
+    const { selectedColorway, colorwayName, background } = this.props;
+    const { selectedStyle, stateBorder, statePadding } = this.state;
+    const { style } = this.state;
+    let { border, padding } = style;
+    const {
+      display, margin, width, height, borderRadius,
+    } = style;
+
+    if (border !== stateBorder) {
+      border = stateBorder;
+    }
+    if (padding !== statePadding) {
+      padding = statePadding;
+    }
+    const isSelected = (selectedColorway === colorwayName);
 
     return (
       <div
-       onMouseEnter={isSelected ? () => { return undefined; } : this.toggleHover}
-       onMouseLeave={isSelected? () => { return undefined; } : this.toggleHover}
-       style={isSelected ? this.state.selectedStyle : this.state.style}
-       onClick={this.toggleClick}
-       colorway_name={this.props.colorway_name}>
-        <div style={this.props.background}/>
+        onMouseEnter={isSelected ? () => undefined : this.toggleHover}
+        onMouseLeave={isSelected ? () => undefined : this.toggleHover}
+        style={
+          isSelected ? selectedStyle : {
+            display, margin, width, height, borderRadius, border, padding,
+          }
+        }
+        onClick={this.toggleClick}
+        onKeyDown={isSelected ? () => undefined : this.toggleClick}
+        colorwayName={colorwayName}
+        role="button"
+        tabIndex="0"
+      >
+        <div style={background} />
       </div>
-    )
+    );
   }
 }
+
+StatefulButtonColor.propTypes = {
+  selectedColorway: PropTypes.string.isRequired,
+  background: PropTypes.objectOf(PropTypes.string).isRequired,
+  style: PropTypes.objectOf(PropTypes.string).isRequired,
+  colorwayName: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default StatefulButtonColor;
 

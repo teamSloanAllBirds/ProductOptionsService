@@ -42,32 +42,32 @@ class ProductDetail extends React.Component {
         <div id="description-block" style={{marginTop: "20px"}}>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
-          description_name="CORE FEATURES"
+          descriptionName="CORE FEATURES"
           onClick={this.onClick}
           text={this.props.core_features}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
-          selected_description={this.state.selectedDescription}/><br></br>
+          selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
-          description_name="DESCRIPTION"
+          descriptionName="DESCRIPTION"
           onClick={this.onClick}
           text={this.props.product_description}
           style={{display: "inline", padding: "3px", fontSize: "small",}}
-          selected_description={this.state.selectedDescription}/><br></br>
+          selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
-          description_name="SHIPPING & RETURNS"
+          descriptionName="SHIPPING & RETURNS"
           onClick={this.onClick}
           text={this.props.shipping_returns}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
-          selected_description={this.state.selectedDescription}/><br></br>
+          selectedDescription={this.state.selectedDescription}/><br></br>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
           <StatefulButton
-          description_name="CARE GUIDE"
+          descriptionName="CARE GUIDE"
           onClick={this.onClick}
           text={this.props.care_guide}
           style={{display: "inline", padding: "3px", fontSize: "small"}}
-          selected_description={this.state.selectedDescription}/>
+          selectedDescription={this.state.selectedDescription}/>
           <hr style={{color: "#cfcfcf", width: "95%"}}></hr>
         </div>
       </div>
