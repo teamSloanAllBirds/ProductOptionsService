@@ -4,61 +4,27 @@ class StatefulButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false,
       style: this.props.style,
-      selected_colorway: this.props.selected_colorway,
-      selected_size: this.props.selected_size
+      selectedDescription: this.props.selected_description,
     }
   }
+  onClick() {
 
-  // toggleHover() {
-  //   if (!this.state.hover) {
-  //     this.setState({
-  //       hover: !this.state.hover,
-  //       style: {
-  //         display: this.state.style.display,
-  //         height: this.state.style.height,
-  //         backgroundColor: "#ffffff",
-  //         color: "#000000",
-  //         padding: this.state.style.padding,
-  //         border: this.state.style.border,
-  //         margin: this.state.style.margin,
-  //         textAlign: this.state.style.textAlign,
-  //         width: this.state.style.width
-  //       },
-  //       selected_colorway: this.state.selected_colorway,
-  //       selected_size: this.state.selected_size
-  //     });
-  //   } else {
-  //     this.setState({
-  //       hover: !this.state.hover,
-  //       style: {
-  //         display: this.state.style.display,
-  //         height: this.state.style.height,
-  //         backgroundColor: "#000000",
-  //         color: "#ffffff",
-  //         padding: this.state.style.padding,
-  //         border: this.state.style.border,
-  //         margin: this.state.style.margin,
-  //         textAlign: this.state.style.textAlign,
-  //         width: this.state.style.width
-  //       },
-  //       selected_colorway: this.state.selected_colorway,
-  //       selected_size: this.state.selected_size
-  //     });
-  //   }
-  // }
-  // toggleClick(e) {
-  //   e.preventDefault();
-  //   this.props.onClick(e);
-  // }
+  }
   render() {
-
+    var isSelected = false;
+    if (this.props.selected_description === this.props.description_name) {
+      isSelected = true;
+    }
     return (
       <div
+      name={this.props.description_name}
       className="stateful_button"
-      style={this.state.style}>
-        <div style={{padding: "17px 0"}}>{this.props.text}</div>
+      style={this.state.style} onClick={this.props.onClick}>
+        {this.props.description_name}
+        <div style={isSelected ? {display: "inline-block", marginLeft: "4px", marginTop: "2px", marginBottom: "2px"} : {padding: "17px 0", display: "none"}}>
+          {this.props.text}
+        </div>
       </div>
     )
   }
