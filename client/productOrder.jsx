@@ -170,43 +170,43 @@ class ProductOrder extends React.Component {
             id="button_2"
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="8"
+            sizeName="8"
             style={{display: "inline-block", margin: "3px"}}
             background={this.props.parent_state.thunderx8Inventory !== 0 ? {backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+++8++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"} : oos8Style}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="8.5"
+            sizeName="8.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++8.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="9"
+            sizeName="9"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+++9++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="9.5"
+            sizeName="9.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++9.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="10"
+            sizeName="10"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++10++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="10.5"
+            sizeName="10.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+10.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="11"
+            sizeName="11"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++11++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
           </div>
@@ -214,37 +214,37 @@ class ProductOrder extends React.Component {
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="11.5"
+            sizeName="11.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+11.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="12"
+            sizeName="12"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++12++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="12.5"
+            sizeName="12.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+12.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="13"
+            sizeName="13"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++13++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="13.5"
+            sizeName="13.5"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=+13.5+)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
             <StatefulButtonSize
             selectedSize={this.state.selectedSize}
             onClick={this.selectSize}
-            size_name="14"
+            sizeName="14"
             style={{display: "inline-block", margin: "3px"}}
             background={{backgroundImage: "url(https://dummyimage.com/42x42/ffffff&text=++14++)", width: "42px", height: "42px", borderRadius: "3px", border: "1px solid black"}}/>
           </div>
@@ -256,7 +256,7 @@ class ProductOrder extends React.Component {
           onClick={this.handleSubmit}
           selectedColorway={this.state.selectedColorway}
           selectedSize={this.state.selectedSize}
-          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "90%"}}/>
+          style={this.state.selectedSize === '' ? defaultCartStyle: {display: "inline-block", padding: "3px", height: "48px", backgroundColor: "#000000", color: "#ffffff", border: "2px solid black", textAlign: "center", width: "95%"}}/>
         </div>
       </div>
     )
