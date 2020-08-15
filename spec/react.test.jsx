@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount, render } from 'enzyme';
 
-import App from '../client/index.jsx';
-import ProductOrder from '../client/index.jsx';
+import App from '../client/App.jsx';
+import ProductOrder from '../client/ProductOrder.jsx';
 import StatefulButtonColor from '../client/statefulButtonColor.jsx';
 import StatefulButtonSize from '../client/statefulButtonSize.jsx';
 import StatefulCartButton from '../client/statefulCartButton.jsx';
-import ProductIntro from '../client/ProductIntro'
+import ProductIntro from '../client/ProductIntro.jsx';
 
 const clickFn = jest.fn();
 
