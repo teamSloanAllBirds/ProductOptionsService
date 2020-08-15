@@ -17,12 +17,11 @@ const defaultCartStyle = {
 };
 
 const oos8Style = {
-  backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++)',
+  backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++), linear-gradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)',
   width: '42px',
   height: '42px',
   borderRadius: '3px',
   border: '1px solid black',
-  background: 'linearGradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)',
 };
 
 class ProductOrder extends React.Component {
@@ -90,6 +89,7 @@ class ProductOrder extends React.Component {
   render() {
     const { selectedColorway, selectedSize } = this.state;
     const { parentState } = this.props;
+    console.log('parentState.thunderx8Inventory ', parentState.thunderx8Inventory, !!parentState.thunderx8Inventory);
     return (
       <div
         className="product_order"
@@ -357,7 +357,7 @@ class ProductOrder extends React.Component {
                 display: 'inline-block',
                 margin: '3px',
               }}
-              background={parentState.thunderx8Inventory !== 0
+              background={!!parentState.thunderx8Inventory
                 ? {
                   backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++)',
                   width: '42px',
