@@ -50,7 +50,7 @@ class StatefulCartButton extends Component {
 
   render() {
     const {
-      style, selectedSize,
+      style, selectedSize, sizeStock,
     } = this.props;
     const {
       display, padding, height, textAlign, width,
@@ -71,11 +71,20 @@ class StatefulCartButton extends Component {
     if (selectedSize === '') {
       buttonText = 'SELECT A SIZE';
     } else {
-      buttonText = 'ADD TO CART';
-      if (backgroundColor === '#cfcfcf') {
-        color = '#ffffff';
-        backgroundColor = '#000000';
-        border = '1px solid black';
+      if (!sizeStock) {
+        buttonText = 'JOIN THE WAITLIST';
+        if (backgroundColor === '#cfcfcf') {
+          color = '#ffffff';
+          backgroundColor = '#000000';
+          border = '1px solid black';
+        }
+      } else if (sizeStock) {
+        buttonText = 'ADD TO CART';
+        if (backgroundColor === '#cfcfcf') {
+          color = '#ffffff';
+          backgroundColor = '#000000';
+          border = '1px solid black';
+        }
       }
     }
 
