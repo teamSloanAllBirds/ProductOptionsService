@@ -43,7 +43,7 @@ class App extends React.Component {
           reviews={productReviewQuantity}
         />
         <ProductOrder
-          parent_state={this.state}
+          parentState={this.state}
         />
         <span
           style={{
