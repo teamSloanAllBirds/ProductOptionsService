@@ -7,7 +7,7 @@ import ProductIntro from './productIntro.jsx';
 import ProductOrder from './productOrder.jsx';
 import ProductDetail from './productDetail.jsx';
 
-class App extends React.Component {
+class OptionsApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -73,4 +73,4 @@ class App extends React.Component {
 
 // bonking out the render for testing
 // adding in export default for testing
-export default App;
+export default OptionsApp;
