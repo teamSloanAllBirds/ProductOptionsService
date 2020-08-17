@@ -50,16 +50,16 @@ mysql -u YOUR_USERNAME_HERE < schema.sql
 npm seed
 ```
 ### Starting the Server
-Run the nodemon server:
-
-```sh
-npm start
-```
-
 Run webpack:
 
 ```sh
 npm run-script build
+```
+
+Run the nodemon server:
+
+```sh
+npm start
 ```
 
 ### Additional Setup for a Proxy Server
