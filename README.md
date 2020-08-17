@@ -16,7 +16,7 @@
 
 ## Usage
 
-> You can use this to buy shoes.
+> You can use this to buy shoes. Intended to be used in tandem with the related projects modules.
 
 ## Requirements
 
@@ -36,3 +36,30 @@ npm install -g webpack
 npm install
 ```
 
+### Seeding the Database
+From within the root directory:
+
+Make your own config.js with the following line:
+
+```sh
+module.exports = {user: 'YOUR_USERNAME_HERE', database: 'allbirds', multipleStatements: true};
+```
+
+```sh
+mysql -u YOUR_USERNAME_HERE < schema.sql
+npm seed
+```
+### Starting the Server
+Run the nodemon server:
+
+```sh
+npm start
+```
+
+Run webpack:
+
+```sh
+npm run-script build
+```
+
+### Additional Setup for a Proxy Server
