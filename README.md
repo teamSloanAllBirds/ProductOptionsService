@@ -50,6 +50,8 @@ mysql -u YOUR_USERNAME_HERE < schema.sql
 npm seed
 ```
 ### Starting the Server
+From within the root directory:
+
 Run webpack:
 
 ```sh
