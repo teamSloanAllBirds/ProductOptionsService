@@ -16,13 +16,13 @@ const defaultCartStyle = {
   width: '95%',
 };
 
-const oos8Style = {
-  backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++), linear-gradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)',
-  width: '42px',
-  height: '42px',
-  borderRadius: '3px',
-  border: '1px solid black',
-};
+// const oos8Style = {
+//   backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++), linear-gradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)',
+//   width: '42px',
+//   height: '42px',
+//   borderRadius: '3px',
+//   border: '1px solid black',
+// };
 
 class ProductOrder extends React.Component {
   constructor(props) {
@@ -30,6 +30,19 @@ class ProductOrder extends React.Component {
     this.state = {
       selectedColorway: 'Thunder (Dark Blue Upper / White Sole)',
       selectedSize: '',
+      stock8: 0,
+      stock85: 4,
+      stock9: 4,
+      stock95: 2,
+      stock10: 0,
+      stock105: 0,
+      stock11: 1,
+      stock115: 1,
+      stock12: 2,
+      stock125: 0,
+      stock13: 0,
+      stock135: 0,
+      stock14: 3,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -87,9 +100,24 @@ class ProductOrder extends React.Component {
   }
 
   render() {
-    const { selectedColorway, selectedSize } = this.state;
+    const {
+      selectedColorway,
+      selectedSize,
+      stock8,
+      stock85,
+      stock9,
+      stock95,
+      stock10,
+      stock105,
+      stock11,
+      stock115,
+      stock12,
+      stock125,
+      stock13,
+      stock135,
+      stock14,
+    } = this.state;
     const { parentState } = this.props;
-    console.log('parentState.thunderx8Inventory ', parentState.thunderx8Inventory, !!parentState.thunderx8Inventory);
     return (
       <div
         className="product_order"
@@ -327,11 +355,27 @@ class ProductOrder extends React.Component {
               SELECT SIZE:
             </div>
             <div
-              style={{
+              style={
+                !stock8 ||
+                !stock85 ||
+                !stock9 ||
+                !stock95 ||
+                !stock10 ||
+                !stock105 ||
+                !stock11 ||
+                !stock115 ||
+                !stock12 ||
+                !stock125 ||
+                !stock13 ||
+                !stock135 ||
+                !stock14
+                ? {
                 width: '50%',
                 align: 'right',
                 display: 'inline-block',
                 fontSize: 'small',
+              } : {
+                display: 'none'
               }}
             >
               <a
@@ -357,15 +401,14 @@ class ProductOrder extends React.Component {
                 display: 'inline-block',
                 margin: '3px',
               }}
-              background={!!parentState.thunderx8Inventory
-                ? {
-                  backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++)',
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '3px',
-                  border: '1px solid black',
-                }
-                : oos8Style}
+              background={{
+                backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++)',
+                width: '42px',
+                height: '42px',
+                borderRadius: '3px',
+                border: '1px solid black',
+              }}
+              stock={stock8}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -382,6 +425,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock85}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -398,6 +442,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock9}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -414,6 +459,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock95}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -430,6 +476,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock10}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -446,6 +493,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock105}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -462,6 +510,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock11}
             />
           </div>
           <div
@@ -482,6 +531,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock115}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -498,6 +548,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock12}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -514,6 +565,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock125}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -530,6 +582,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock13}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -546,6 +599,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock135}
             />
             <StatefulButtonSize
               selectedSize={selectedSize}
@@ -562,6 +616,7 @@ class ProductOrder extends React.Component {
                 borderRadius: '3px',
                 border: '1px solid black',
               }}
+              stock={stock14}
             />
           </div>
         </div>
@@ -597,6 +652,7 @@ class ProductOrder extends React.Component {
                   width: '95%',
                 }
             }
+            sizeStock={this.state[`stock${selectedSize.split('.').join('')}`]}
           />
         </div>
       </div>

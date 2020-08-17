@@ -62,7 +62,7 @@ class StatefulButtonSize extends React.Component {
 
   render() {
     const {
-      selectedSize, sizeName, style,
+      selectedSize, sizeName, style, stock,
     } = this.props;
     const { background } = this.props;
     let { backgroundImage } = background;
@@ -76,6 +76,9 @@ class StatefulButtonSize extends React.Component {
     const isSelected = (selectedSize === sizeName);
     if (!isSelected && backgroundImage === `url(https://dummyimage.com/42x42/000000/ffffff&text=${this.sizeNamePlus()})`) {
       backgroundImage = `url(https://dummyimage.com/42x42/ffffff&text=${background.backgroundImage.substr(-7, 6)})`;
+    }
+    if (stock < 1) {
+      backgroundImage = 'linear-gradient(to left top, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%), ' + backgroundImage;
     }
     return (
       <div
