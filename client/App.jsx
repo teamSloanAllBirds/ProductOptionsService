@@ -14,7 +14,7 @@ class OptionsApp extends React.Component {
   }
 
   componentDidMount() {
-    $.get('/api/5', (data) => {
+    $.get('/api/productoptions/5', (data) => {
       this.setState(data);
     });
   }
