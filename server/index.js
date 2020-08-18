@@ -15,7 +15,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 
-app.get('/api/:id', (req, res) => {
+app.get('/api/productoptions/:id', (req, res) => {
   const id = req.params.id;
   db.retrieveProduct(id, res);
 });

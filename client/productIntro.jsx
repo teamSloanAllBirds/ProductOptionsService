@@ -88,7 +88,7 @@ class ProductIntro extends React.Component {
         <PriceTag>
           {`$ ${price}`}
         </PriceTag>
-        <ReviewHolder id="reviews">
+        <ReviewHolder id="optionsreviews">
           {starsArray}
           <NumberReviews href="#reviews">
             {reviews}
