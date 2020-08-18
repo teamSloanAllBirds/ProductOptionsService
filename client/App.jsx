@@ -34,7 +34,7 @@ class OptionsApp extends React.Component {
       careGuide,
     } = this.state;
     return (
-      <div className="app">
+      <div className="productoptions">
         <ProductIntro
           name={productName}
           price={productPrice}
