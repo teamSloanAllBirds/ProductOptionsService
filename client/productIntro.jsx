@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ProductName = styled.h1`
-font-weight: 900;
-height: 30px;
+  font-weight: 900;
+  height: 50px;
+  display: inline-block;
 `;
 const PriceTag = styled.div`
-padding-bottom: 10px;
+  padding-bottom: 10px;
+  display: block;
 `;
 const ReviewHolder = styled.div`
-  display: inline-block;
+  display: block;
   padding-bottom: 13px;
 `;
 const NumberReviews = styled.a`
@@ -18,6 +20,7 @@ const NumberReviews = styled.a`
   padding-left: 3px;
   padding-top: 2px;
   vertical-align: top;
+  color: #000000;
 `;
 
 class ProductIntro extends React.Component {
@@ -91,7 +94,7 @@ class ProductIntro extends React.Component {
         <ReviewHolder id="optionsreviews">
           {starsArray}
           <NumberReviews href="#reviews">
-            {reviews}
+            ({reviews})
           </NumberReviews>
         </ReviewHolder>
       </div>

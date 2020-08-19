@@ -17,14 +17,6 @@ const defaultCartStyle = {
   width: '95%',
 };
 
-// const oos8Style = {
-//   backgroundImage: 'url(https://dummyimage.com/42x42/ffffff&text=+++8++), linear-gradient(to top right, rgba(207,207,207,0) 0%, rgba(207,207,207,0) calc(50% - 0.8px), rgba(207,207,207,1) 50%, rgba(207,207,207,0) calc(50% + 0.8px), rgba(207,207,207,0) 100%)',
-//   width: '42px',
-//   height: '42px',
-//   borderRadius: '3px',
-//   border: '1px solid black',
-// };
-
 class ProductOrder extends React.Component {
   constructor(props) {
     super(props);
@@ -381,6 +373,9 @@ class ProductOrder extends React.Component {
             >
               <a
                 href="#sold-out"
+                style={{
+                  color: 'black',
+                }}
               >
                 Size sold out?
               </a>
@@ -625,6 +620,7 @@ class ProductOrder extends React.Component {
           href="#size-chart"
           style={{
             fontSize: 'small',
+            color: 'black',
           }}
         >
           See Size Chart
