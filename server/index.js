@@ -20,7 +20,7 @@ app.get('/api/productoptions/:id', (req, res) => {
   db.retrieveProduct(id, res);
 });
 
-app.post('/shopping-cart/', (req, res) => {
+app.post('/api/productoptions/shopping-cart/', (req, res) => {
   res.json('You have added an item to the cart' + JSON.stringify(req.body));
 });
 

@@ -55,7 +55,7 @@ class ProductOrder extends React.Component {
     const { selectedColorway, selectedSize } = this.state;
     $.ajax({
       type: 'POST',
-      url: '/shopping-cart/',
+      url: 'api/productoptions/shopping-cart/',
       data: {
         colorway: selectedColorway,
         size: selectedSize,
