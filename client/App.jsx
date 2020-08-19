@@ -7,15 +7,6 @@ import ProductIntro from './productIntro.jsx';
 import ProductOrder from './productOrder.jsx';
 import ProductDetail from './productDetail.jsx';
 
-const StyledSpan = styled.span`
-  display: 'inline-block';
-  fontSize: 'small';
-  marginTop: '10px';
-  marginBottom: '10px';
-  textAlign: 'center';
-  width: '95%';
-`;
-
 class OptionsApp extends React.Component {
   constructor(props) {
     super(props);
@@ -54,9 +45,16 @@ class OptionsApp extends React.Component {
         <ProductOrder
           parentState={this.state}
         />
-        <StyledSpan>
+        <span style={{
+          display: 'inline-block',
+          fontSize: 'small',
+          marginTop: '10px',
+          marginBottom: '10px',
+          textAlign: 'center',
+          width: '95%',
+        }}>
           Free shipping & 30-day returns, no questions asked
-        </StyledSpan>
+        </span>
         <ProductDetail
           name={productName}
           highlight1={highlight1Text}
