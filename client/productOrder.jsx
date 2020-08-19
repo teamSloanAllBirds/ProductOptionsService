@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import styled from 'styled-components';
 import StatefulButtonColor from './statefulButtonColor.jsx';
 import StatefulButtonSize from './statefulButtonSize.jsx';
 import StatefulCartButton from './statefulCartButton.jsx';
