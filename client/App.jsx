@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-// import styles from 'styled-components';
+import styled from 'styled-components';
 
 import ProductIntro from './productIntro.jsx';
 import ProductOrder from './productOrder.jsx';
 import ProductDetail from './productDetail.jsx';
+
+const StyledSpan = styled.span`
+  display: 'inline-block';
+  fontSize: 'small';
+  marginTop: '10px';
+  marginBottom: '10px';
+  textAlign: 'center';
+  width: '95%';
+`;
 
 class OptionsApp extends React.Component {
   constructor(props) {
@@ -14,7 +23,8 @@ class OptionsApp extends React.Component {
   }
 
   componentDidMount() {
-    $.get('/api/productoptions/5', (data) => {
+    const pathname = (window.location.pathname !== '/') ? window.location.pathname : '/1';
+    $.get(`/api/productoptions${pathname}`, (data) => {
       this.setState(data);
     });
   }
@@ -44,18 +54,9 @@ class OptionsApp extends React.Component {
         <ProductOrder
           parentState={this.state}
         />
-        <span
-          style={{
-            display: 'inline-block',
-            fontSize: 'small',
-            marginTop: '10px',
-            marginBottom: '10px',
-            textAlign: 'center',
-            width: '95%',
-          }}
-        >
+        <StyledSpan>
           Free shipping & 30-day returns, no questions asked
-        </span>
+        </StyledSpan>
         <ProductDetail
           name={productName}
           highlight1={highlight1Text}

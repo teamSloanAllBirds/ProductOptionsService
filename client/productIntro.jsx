@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from 'styled-components';
+import styled from 'styled-components';
 
-const ProductName = styles.h1`
+const ProductName = styled.h1`
 font-weight: 900;
 height: 30px;
 `;
-const PriceTag = styles.div`
+const PriceTag = styled.div`
 padding-bottom: 10px;
 `;
-const ReviewHolder = styles.div`
+const ReviewHolder = styled.div`
   display: inline-block;
   padding-bottom: 13px;
 `;
-const NumberReviews = styles.a`
+const NumberReviews = styled.a`
   font-size: 95%;
   padding-left: 3px;
   padding-top: 2px;

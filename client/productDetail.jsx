@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import StatefulButton from './statefulButton.jsx';
+
+const StyledHr = styled.hr`
+  color: '#cfcfcf';
+  width: '95%';
+`;
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -53,16 +59,14 @@ class ProductDetail extends React.Component {
         <div
           id="highlight-block"
         >
-          <div
-            style={{
-              display: 'inline-block',
-              width: '30%',
-              verticalAlign: 'top',
-              fontSize: 'x-small',
-              padding: '5px',
-              margin: 'auto',
-            }}
-          >
+          <div style={{
+            display: 'inline-block',
+            width: '30%',
+            verticalAlign: 'top',
+            fontSize: 'x-small',
+            padding: '5px',
+            margin: 'auto',
+          }}>
             <img
               src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/5RRq6D7d2XTZqvdmMIZQao/8499977205e7511610408842c3e2e925/4pdp-attributes-dasher-sprinter.png"
               height="44px"
@@ -74,16 +78,14 @@ class ProductDetail extends React.Component {
             <br />
             {highlight1}
           </div>
-          <div
-            style={{
-              display: 'inline-block',
-              width: '30%',
-              verticalAlign: 'top',
-              fontSize: 'x-small',
-              padding: '5px',
-              margin: 'auto',
-            }}
-          >
+          <div style={{
+            display: 'inline-block',
+            width: '30%',
+            verticalAlign: 'top',
+            fontSize: 'x-small',
+            padding: '5px',
+            margin: 'auto',
+          }}>
             <img
               src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/7wss7uKwXrUO90ynOGYr4g/01a0e139e9605b20c72fd5d11029c8ec/3pdp-attributes-dasher-sprinter.png"
               height="44px"
@@ -95,16 +97,14 @@ class ProductDetail extends React.Component {
             <br />
             {highlight2}
           </div>
-          <div
-            style={{
-              display: 'inline-block',
-              width: '30%',
-              verticalAlign: 'top',
-              fontSize: 'x-small',
-              padding: '5px',
-              margin: 'auto',
-            }}
-          >
+          <div style={{
+            display: 'inline-block',
+            width: '30%',
+            verticalAlign: 'top',
+            fontSize: 'x-small',
+            padding: '5px',
+            margin: 'auto',
+          }}>
             <img
               src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/6R7XNn35GqLdQ5OLgAalOu/1a762104f13ce7cb027333ae05a78dac/5pdp-attributes-dasher-sprinter.png"
               height="44px"
@@ -123,12 +123,7 @@ class ProductDetail extends React.Component {
             marginTop: '20px',
           }}
         >
-          <hr
-            style={{
-              color: '#cfcfcf',
-              width: '95%',
-            }}
-          />
+          <StyledHr />
           <StatefulButton
             descriptionName="CORE FEATURES"
             onClick={this.onClick}
@@ -141,12 +136,7 @@ class ProductDetail extends React.Component {
             selectedDescription={selectedDescription}
           />
           <br />
-          <hr
-            style={{
-              color: '#cfcfcf',
-              width: '95%',
-            }}
-          />
+          <StyledHr />
           <StatefulButton
             descriptionName="DESCRIPTION"
             onClick={this.onClick}
@@ -159,12 +149,7 @@ class ProductDetail extends React.Component {
             selectedDescription={selectedDescription}
           />
           <br />
-          <hr
-            style={{
-              color: '#cfcfcf',
-              width: '95%',
-            }}
-          />
+          <StyledHr />
           <StatefulButton
             descriptionName="SHIPPING & RETURNS"
             onClick={this.onClick}
@@ -177,12 +162,7 @@ class ProductDetail extends React.Component {
             selectedDescription={selectedDescription}
           />
           <br />
-          <hr
-            style={{
-              color: '#cfcfcf',
-              width: '95%',
-            }}
-          />
+          <StyledHr />
           <StatefulButton
             descriptionName="CARE GUIDE"
             onClick={this.onClick}
@@ -194,12 +174,7 @@ class ProductDetail extends React.Component {
             }}
             selectedDescription={selectedDescription}
           />
-          <hr
-            style={{
-              color: '#cfcfcf',
-              width: '95%',
-            }}
-          />
+          <StyledHr />
         </div>
       </div>
     );
