@@ -6,7 +6,7 @@
 > 1. A selector section with several colorways and different sizes and an add-to-cart button
 > 1. A description section with various flavor text about a given shoe
 > Allbirds/Shopify Product Options module being replicated:
-> ![Image of Full Module](https://drive.google.com/file/d/1SD4MEMEcSB2iyLtzwarPyg4zBcSznhbh/view?usp=sharing)
+> ![Image of Full Module](https://ibb.co/r71gcKC)
 >
 >
 
