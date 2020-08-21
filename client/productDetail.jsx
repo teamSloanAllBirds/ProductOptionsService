@@ -69,7 +69,7 @@ class ProductDetail extends React.Component {
           }}>
             <img
               id="highlight1picture"
-              src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/5RRq6D7d2XTZqvdmMIZQao/8499977205e7511610408842c3e2e925/4pdp-attributes-dasher-sprinter.png"
+              src="https://githubimagehrri.s3.us-east-2.amazonaws.com/highlight1.jpg"
               height="44px"
               width="44px"
               style={{
@@ -91,7 +91,7 @@ class ProductDetail extends React.Component {
           }}>
             <img
               id="highlight2picture"
-              src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/7wss7uKwXrUO90ynOGYr4g/01a0e139e9605b20c72fd5d11029c8ec/3pdp-attributes-dasher-sprinter.png"
+              src="https://githubimagehrri.s3.us-east-2.amazonaws.com/highlight2.jpg"
               height="44px"
               width="44px"
               style={{
@@ -113,7 +113,7 @@ class ProductDetail extends React.Component {
           }}>
             <img
               id="highlight3picture"
-              src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/f_auto,q_auto/https://images.ctfassets.net/9uo1qvvet3xa/6R7XNn35GqLdQ5OLgAalOu/1a762104f13ce7cb027333ae05a78dac/5pdp-attributes-dasher-sprinter.png"
+              src="https://githubimagehrri.s3.us-east-2.amazonaws.com/highlight1.jpg"
               height="44px"
               width="44px"
               style={{
