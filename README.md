@@ -76,8 +76,6 @@ Run the nodemon server:
 npm start
 ```
 
-### Additional Setup for a Proxy Server
-
 # React Component Breakdown
 ## App
 ### Child React Components
