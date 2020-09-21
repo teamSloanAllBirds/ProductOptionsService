@@ -5,7 +5,7 @@
 > 1. An introduction section with basic product information
 > 1. A selector section with several colorways and different sizes and an add-to-cart button
 > 1. A description section with various flavor text about a given shoe
-> 1. Product Options module being replicated:
+> 1. Product Options module:
 > 
 > ![Image of Full Module](https://githubimagehrri.s3.us-east-2.amazonaws.com/betterscreenshot.png)
 >
